@@ -608,79 +608,6 @@ template {
   background: #242424;
 }
 
-.footer-inner {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.column-first,
-.column-second,
-.column-third {
-  box-sizing: border-box;
-  word-wrap: break-word;
-  margin-left: 15px;
-  margin-right: 15px;
-  display: flex;
-  flex-direction: column;
-}
-
-.column-second {
-  position: relative;
-  align-items: center;
-}
-
-.column-second::after,
-.column-second::before {
-  position: absolute;
-  content: "";
-  bottom: 1.25rem;
-  width: 5rem;
-  height: 0.125rem;
-  transform: rotate(90deg);
-  background: rgba(255, 255, 255, 0.1);
-}
-
-.column-second::after {
-  right: -8.125rem;
-}
-
-.column-second::before {
-  left: -8.125rem;
-}
-
-.column-third {
-  align-items: flex-end;
-}
-
-.contacts-list {
-  display: flex;
-  flex-direction: column;
-}
-
-.contacts__item:not(:last-child) {
-  margin-bottom: 0.3125rem;
-}
-
-.contacts__link {
-  display: block;
-  padding: 0.3125rem;
-  font-size: 1rem;
-  line-height: 1rem;
-  color: #fff;
-}
-
-.year,
-.policy {
-  font-size: 1rem;
-  line-height: 1rem;
-  color: #fff;
-}
-
-.policy {
-  margin-bottom: 0.9375rem;
-}
-
 .about {
   width: 100%;
   padding: 1.25rem 0 6.25rem 0;
@@ -1099,6 +1026,92 @@ template {
   color: #242424;
 }
 
+.footer-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.column {
+  box-sizing: border-box;
+  word-wrap: break-word;
+  margin-left: 15px;
+  margin-right: 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.column:not(:first-child) {
+  position: relative;
+}
+
+.column:not(:first-child)::before {
+  position: absolute;
+  content: "";
+  bottom: 50%;
+  width: 5rem;
+  height: 0.125rem;
+  transform: rotate(90deg);
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.column:not(:first-child)::before {
+  left: -4rem;
+}
+
+.column-second {
+  box-sizing: border-box;
+  word-wrap: break-word;
+  margin-left: 15px;
+  margin-right: 15px;
+}
+
+.footer-nav-list .nav__item::before {
+  display: none;
+}
+
+.footer-nav-list .nav__link {
+  display: block;
+  padding: 0.3125rem;
+  font-size: 1.125rem;
+  line-height: 1.125rem;
+  text-transform: uppercase;
+  color: #fff;
+}
+
+.footer-nav-list .nav__link:not(:last-child) {
+  margin-bottom: 0.625rem;
+}
+
+.contacts-list {
+  display: flex;
+  flex-direction: column;
+}
+
+.contacts__item:not(:last-child) {
+  margin-bottom: 0.3125rem;
+}
+
+.contacts__link {
+  display: block;
+  padding: 0.3125rem;
+  font-size: 1rem;
+  line-height: 1rem;
+  color: #fff;
+}
+
+.year,
+.policy {
+  font-size: 1rem;
+  line-height: 1rem;
+  color: #fff;
+}
+
+.policy {
+  margin-bottom: 0.9375rem;
+}
+
 @media screen and (min-width: 480px) {
   .container-fluid {
     padding-left: 10px;
@@ -1108,13 +1121,6 @@ template {
   .container {
     padding-left: 10px;
     padding-right: 10px;
-  }
-
-  .column-first,
-  .column-second,
-  .column-third {
-    margin-left: 2.5px;
-    margin-right: 2.5px;
   }
 
   .header-logo {
@@ -1138,6 +1144,16 @@ template {
   }
 
   .about-text {
+    margin-left: 2.5px;
+    margin-right: 2.5px;
+  }
+
+  .column {
+    margin-left: 2.5px;
+    margin-right: 2.5px;
+  }
+
+  .column-second {
     margin-left: 2.5px;
     margin-right: 2.5px;
   }
@@ -1154,13 +1170,6 @@ template {
     padding-right: 10px;
   }
 
-  .column-first,
-  .column-second,
-  .column-third {
-    margin-left: 2.5px;
-    margin-right: 2.5px;
-  }
-
   .header-logo {
     margin-left: 2.5px;
     margin-right: 2.5px;
@@ -1182,6 +1191,16 @@ template {
   }
 
   .about-text {
+    margin-left: 2.5px;
+    margin-right: 2.5px;
+  }
+
+  .column {
+    margin-left: 2.5px;
+    margin-right: 2.5px;
+  }
+
+  .column-second {
     margin-left: 2.5px;
     margin-right: 2.5px;
   }
@@ -1198,13 +1217,6 @@ template {
     padding-right: 10px;
   }
 
-  .column-first,
-  .column-second,
-  .column-third {
-    margin-left: 2.5px;
-    margin-right: 2.5px;
-  }
-
   .header-logo {
     margin-left: 2.5px;
     margin-right: 2.5px;
@@ -1229,15 +1241,19 @@ template {
     margin-left: 2.5px;
     margin-right: 2.5px;
   }
+
+  .column {
+    margin-left: 2.5px;
+    margin-right: 2.5px;
+  }
+
+  .column-second {
+    margin-left: 2.5px;
+    margin-right: 2.5px;
+  }
 }
 
 @media screen and (min-width: 1440px) {
-  .column-first,
-  .column-second,
-  .column-third {
-    width: calc(33.33333% - 5px);
-  }
-
   .header-logo {
     width: calc(25% - 5px);
   }
@@ -1252,6 +1268,14 @@ template {
 
   .about-text {
     width: calc(50% - 5px);
+  }
+
+  .column {
+    width: calc(25% - 5px);
+  }
+
+  .column-second {
+    width: calc(16.66667% - 5px);
   }
 }
 
